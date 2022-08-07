@@ -46,8 +46,35 @@
           <div class="col-md-12">
             <button type="submit" class="btn btn-primary">Submit</button>
           </div>
+          <p> What is your answer to the question? </p>
+       <input type="radio" name = "ans" value="yes"> Yes </br>
+       <input type="radio" name = "ans" value="no"> No </br>
+       <input type="radio" name = "ans" value="maybe" checked> Maybe </br> </br>
+       <button type="button">Submit!</button>
         </form>
-      <iframe src="https://www.google.com/maps/d/embed?mid=1Yct68QsNFVks1AGsB-38dEWSjYamJWA&ehbc=2E312F" width="640" height="480"></iframe>
+      <head>
+    <title>Add Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script type="module" src="./index.js"></script>
+  </head>
+  <body>
+    <h3>My Google Maps Demo</h3>
+    <!--The div element for the map -->
+    <div id="map"></div>
+
+    <!-- 
+     The `defer` attribute causes the callback to execute after the full HTML
+     document has been parsed. For non-blocking uses, avoiding race conditions,
+     and consistent behavior across browsers, consider loading using Promises
+     with https://www.npmjs.com/package/@googlemaps/js-api-loader.
+    -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+      defer
+    ></script>
+  </body>
     </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
