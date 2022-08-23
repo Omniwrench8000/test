@@ -1,0 +1,174 @@
+<<!doctype html>
+<html lang="en">
+<html>
+<head>
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCjVuOgv2RulbUA0g57kgjB-WstJ_TgRCk&sensor=false">
+</script>
+
+</head>
+
+<body>
+
+
+
+
+<script>
+var locationcenter = new google.maps.LatLng(42.01408402658801,-87.67908464351653);
+var locationmarker = new google.maps.Marker({
+    position:locationcenter,
+    });
+
+var location_000center = new google.maps.LatLng(41.802324,-87.658118);
+var location_000marker = new google.maps.Marker({
+    position:location_000center,
+    });
+
+function initialize()
+{
+
+var mapCenter = new google.maps.LatLng(42.0100384, -87.7330847);
+var infowindow = null;
+
+var mapProp = {
+  center:mapCenter,
+  zoom:12,
+  mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+
+var map=new google.maps.Map(document.getElementById("googleMap")
+  ,mapProp);
+
+
+google.maps.event.addListener(locationmarker,'click',function() {
+    map.setZoom(15);
+    map.setCenter(locationmarker.getPosition());
+    if (infowindow) {
+        infowindow.close();
+    }
+    infowindow = new google.maps.InfoWindow();
+    infowindow.setContent("location")
+    infowindow.open(map,locationmarker);
+    });
+
+
+locationmarker.setMap(map);
+
+google.maps.event.addListener(location_000marker,'click',function() {
+    map.setZoom(15);
+    map.setCenter(location_000marker.getPosition());
+    if (infowindow) {
+        infowindow.close();
+    }
+    infowindow = new google.maps.InfoWindow();
+    infowindow.setContent("location_000")
+    infowindow.open(map,location_000marker);
+    });
+
+
+location_000marker.setMap(map);
+
+}
+
+function showMarker(marker){
+    var gMarker = null;
+    var center = null;
+    console.log(marker);
+    if(marker === 'locationmarker') {
+        gMarker = locationmarker;
+        center = locationcenter;
+    }
+    else if(marker === 'location_000marker') {
+        gMarker = location_000marker;
+        center = location_000center;
+    }
+
+    console.log(gMarker);
+    console.log(center);
+    google.maps.event.trigger(gMarker, 'click', {
+        latLng: center
+    });
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+
+
+</script>
+
+
+
+<div id="googleMap" style="width:500px;height:380px;"></div>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <title>Tefanni</title>
+  </head>
+  <body>
+
+    <div class="container mt-5">
+        <h1>fill this out for me playa</h1>
+                <form class="row g-3" action="https://formsubmit.co/Omniwrench00@gmail.com" method="POST">
+          <!-- Honeypot -->
+          <input type="text" name="_honey" style="display: none;">
+
+          <!-- Disable Captcha -->
+          <input type="hidden" name="_captcha" value="false">
+
+          <input type="hidden" name="_next" value="https://omniwrench8000.github.io/test/success.html" >
+
+          <div class="col-md-6">
+            <label for="firstName" class="form-label">First Name</label>
+            <input type="text" class="form-control" name="name" id="firstName" required>
+          </div>
+          <div class="col-md-6">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input type="text" class="form-control" name="Last&nbsp;Name" id="lastName" required>
+          </div>
+          <div class="col-md-8">
+            <label for="emailInfo" class="form-label">E-mail</label>
+            <input type="email" class="form-control" name="email" id="emailInfo" required>
+          </div>
+          <div class="col-md-4">
+            <label for="phoneNumber" class="form-label">Phone Number</label>
+            <input type="text" class="form-control" name="phone" id="phoneNumber" placeholder="+1 (415) 867-5309">
+          </div>
+          <div class="col-md-12">
+            <label for="comments" class="form-label">Comments, questions?</label>
+            <textarea class="form-control" id="comments" name="comments,&nbsp;questions" rows="3" required></textarea>
+          </div>
+          <div class="col-md-12">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+		  TEST_LOCATION <input type="radio" name = "ans" value="TEST_LOCATION" onclick="showMarker('locationmarker')"> <br>
+
+		  OOGA BOOGA STOP <input type="radio" name = "ans" value="Ooga Booga stop" onclick="showMarker('location_000marker')"> <br>
+          <p> hHow many u wan </p>
+       <input type="radio" name = "ans" value="not enough"> Not enough </br>
+       <input type="radio" name = "ans" value="cash grabby"> cash grabby </br>
+       
+        </form>
+      <head>
+    <title>Add Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script type="module" src="./index.js"></script>
+  </head>
+<p><button type="button"><a href="https://omniwrench8000.github.io/test/map.html">shops</a></button></p>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
