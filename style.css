@@ -5,3 +5,7 @@
   width: 100%;
   /* The width is the width of the web page */
 }
+.div {
+  height: 300px;
+  width: 300px;
+}
