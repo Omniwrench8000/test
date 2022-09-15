@@ -23,7 +23,7 @@ var location_000marker = new google.maps.Marker({
 	
 var location_001center = new google.maps.LatLng(42.0123245,-87.9201749);
 var location_001marker = new google.maps.Marker({
-    position:location_000center,
+    position:location_001center,
     });
 
 function initialize()
@@ -69,6 +69,17 @@ google.maps.event.addListener(location_000marker,'click',function() {
 
 
 location_000marker.setMap(map);
+	
+google.maps.event.addListener(location_001marker,'click',function() {
+    map.setZoom(15);
+    map.setCenter(location_001marker.getPosition());
+    if (infowindow) {
+        infowindow.close();
+    }
+    infowindow = new google.maps.InfoWindow();
+    infowindow.setContent("location_001")
+    infowindow.open(map,location_001marker);
+    });
 
 }
 
