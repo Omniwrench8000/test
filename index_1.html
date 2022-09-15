@@ -8,12 +8,7 @@
 <body>
 
 <script>
-var a = document.createElement('locationcenter');
-      var linkText = document.createTextNode("TEST_LOCATION");
-      locationcenter.appendChild(linkText);
-      locationcenter.title = "TEST_LOCATION";
-      locationcenter.href = "https://www.google.com/maps/place/42%C2%B000'50.7%22N+87%C2%B040'44.7%22W/@42.014084,-87.6790846,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x9aa21b0ff39d7b99!8m2!3d42.014084!4d-87.6790846";
-      document.body.appendChild(locationcenter);
+
 
 
 var locationcenter = new google.maps.LatLng(42.01408402658801,-87.67908464351653);
@@ -91,6 +86,12 @@ function showMarker(marker){
         latLng: center
     });
 }
+	var a = document.createElement('locationcenter');
+      var linkText = document.createTextNode("TEST_LOCATION");
+      locationcenter.appendChild(linkText);
+      locationcenter.title = "TEST_LOCATION";
+      locationcenter.href = "https://www.google.com/maps/place/42%C2%B000'50.7%22N+87%C2%B040'44.7%22W/@42.014084,-87.6790846,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x9aa21b0ff39d7b99!8m2!3d42.014084!4d-87.6790846";
+      document.body.appendChild(locationcenter);
 google.maps.event.addDomListener(window, 'load', initialize);
 
 
