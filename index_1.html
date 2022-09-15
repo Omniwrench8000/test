@@ -20,6 +20,11 @@ var location_000center = new google.maps.LatLng(41.802324,-87.658118);
 var location_000marker = new google.maps.Marker({
     position:location_000center,
     });
+	
+var location_001center = new google.maps.LatLng(42.0123245,-87.9201749);
+var location_001marker = new google.maps.Marker({
+    position:location_000center,
+    });
 
 function initialize()
 {
@@ -79,7 +84,10 @@ function showMarker(marker){
         gMarker = location_000marker;
         center = location_000center;
     }
-
+	if(marker === 'location_001marker') {
+        gMarker = location_001marker;
+        center = location_001center;
+	}
     console.log(gMarker);
     console.log(center);
     google.maps.event.trigger(gMarker, 'click', {
@@ -132,6 +140,8 @@ google.maps.event.addDomListener(window, 'load', initialize);
 		  TEST_LOCATION <input type="radio" name = "ans" value="TEST_LOCATION" onclick="showMarker('locationmarker')"> <br>
 
 		  OOGA BOOGA STOP <input type="radio" name = "ans" value="Ooga Booga stop" onclick="showMarker('location_000marker')"> <br>
+		
+		Handammy <input type="radio" name = "ans" value="Hanover insd" onclick="showMarker('location_001marker')"> <br>
        
         </form>
 </body>
